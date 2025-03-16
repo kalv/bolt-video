@@ -54,3 +54,14 @@ Then a signature file that defined the draw from 1024 width in a 1,1024 way. Jus
 Started originally working on this in London in 2010.
 Back then I got it working in Java Swing thing. with B&W shades only
 Then returned to the project in Puerto Escondido in 2022 when leaving Shopify. And have been working on the designs, different implementations such as C on just images first and then have taken some different approaches to use different image compression techniques to see if the image frame would be small enough to achieve the goal.
+
+Shield: [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License][cc-by-nc-nd].
+
+[![CC BY-NC-ND 4.0][cc-by-nc-nd-image]][cc-by-nc-nd]
+
+[cc-by-nc-nd]: http://creativecommons.org/licenses/by-nc-nd/4.0/
+[cc-by-nc-nd-image]: https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png
+[cc-by-nc-nd-shield]: https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg
