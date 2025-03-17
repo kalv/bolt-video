@@ -2,6 +2,34 @@
 
 Goal: Getting a video of 1080p rendering in 30 fps but at about 90% the size of an MP4. Using a compression approach that I've been calling Weave.
 
+# Previous iterations
+
+## Blue Sky test
+24th May 2024
+Working on a 1024x1024 resolution image of a specific blue.
+To see if the theory checks.
+57kb image of just a shade of blue.
+Hexdump shows that it's a bit stream of one pixel as a raw image. In any programming language, even after JPG decoding or PNG opening.
+
+If weave, 1 object of one colour of 4kb and 1 signature stating the configuration of the draw will be 2kb. Therefore image would be 6kb for a lossles render of the image. 10% of the original size. A reduction of 90%! Got really excited at this opportunity to develop at a company or with funding.
+
+## Signature thinking
+I was able to compute the unique pixels out of images with a C library created. But the challenge become the size of being able to plot the x,y of the frame. As having to have 2 pointers to a pixl reference vs in PNG which would just stream them row after row.
+
+## Image signature extraction
+I started to work on an `eat(1,1)` function that would better determine the pixels related to the next left X and the top Y and bottom Y to better understand where the pixels would need to be drawn.
+
+Ideas to optimize this would be to use:
+- GPU or faster analysis of a frame to better compute unique pixels per frame, as I want to use this for video eventually.
+- Using multiple cores to fire recursive growing technique of being able to slowly reduce the the image to nothing and recording the positioning of the pixels and then optimizing that data blob post into an optimized size of signature of rendering.
+- Using the recursive lookup function based on the cores and parallel processing of the functions, made me investigate the best language that would allow parallel processing as much as possible.
+
+## Languages and platform testing
+- I tested in Ruby/ImageMagick for prototyping and was obviously slow but allowed me to test out the algorithm
+- SQLite3 DB wasm storage but found that this is more for dynamic web based content and not something low level as this
+- Swift and the potential of using the neural cores which are the same in all machines including the cheapest macbook air m2 that I was using.
+- Raw C is where I ended up constructing more of what I wanted to do. Code I no longer I have.
+
 # Goal is video
 [90% sure it's a fail] Perhaps start with a video file de-compression into PNGs or images that could be analyzed into a data blob.
 
@@ -54,6 +82,13 @@ Then a signature file that defined the draw from 1024 width in a 1,1024 way. Jus
 Started originally working on this in London in 2010.
 Back then I got it working in Java Swing thing. with B&W shades only
 Then returned to the project in Puerto Escondido in 2022 when leaving Shopify. And have been working on the designs, different implementations such as C on just images first and then have taken some different approaches to use different image compression techniques to see if the image frame would be small enough to achieve the goal.
+
+# Things to look up later
+https://github.com/vapoursynth/vapoursynth
+https://github.com/master-of-zen/Av1an?tab=readme-ov-file
+
+# Current conclusion
+I've decided to work on another project until I can get some others to work with me on this but really I have been surprised at the quality of existing video streams and the bandwidth we have. So knowing that in 2025 the video we have is good enough. The BBC iplayer is the best I've seen so far.
 
 Shield: [![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
